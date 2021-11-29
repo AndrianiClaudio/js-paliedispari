@@ -25,6 +25,13 @@ function oddEvenWin(numPlayer,sum) {
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function sum(num1,num2) {
+    return num1+num2;
+}
+
+const container = document.querySelector('.container');
+
 //richiedo numero all'utente
 let userNum;
 do {
@@ -38,7 +45,7 @@ do {
 //genero numero random per il PC
 const pcNum = getRndInteger(1,5);
 if(oddEvenWin(userNum,sum(userNum,pcNum))) { //utente ha vinto
-    console.log('Hai vinto!');
+    container.innerHTML = `Numero scelto: ${userNum}, Numero PC: ${pcNum}<br><strong>Hai vinto!</strong>`;
 } else {
-    console.log('Hai perso!');
+    container.innerHTML = `Numero scelto: ${userNum}, Numero PC: ${pcNum}<br><strong>Hai perso!</strong>`;
 }
