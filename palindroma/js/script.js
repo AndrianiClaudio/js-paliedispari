@@ -4,11 +4,12 @@
 */
 // funzione: word --> true: parola palindrona;false: non polindroma
 function isPalindroma(word) {
+    const word_low = word.toLowerCase();
     const len = word.length;
     let i = 0;
     do {
         // condizione parola polindroma: lettera = lettera finale
-        if (word[i] != word[len - (i + 1)]) {
+        if (word_low[i] != word_low[len - (i + 1)]) {
             return false; //esce dalla funzione.
         }
         i++;
@@ -17,7 +18,7 @@ function isPalindroma(word) {
     return true;
 }
 //  Richiedo una parola all'utente
-const word = prompt('Inserisci una parola').toLowerCase();
+const word = prompt('Inserisci una parola');
 //  Controllo se la parola é uguale a se stessa al contrario tramite funzione
 if (isPalindroma(word)) {
     console.log('La parola é polindroma');
