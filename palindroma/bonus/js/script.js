@@ -18,10 +18,29 @@ function isPalindroma(word) {
     return true;
 }
 //  Richiedo una parola all'utente
-const word = prompt('Inserisci una parola');
-//  Controllo se la parola é uguale a se stessa al contrario tramite funzione
-if (isPalindroma(word)) {
-    console.log('La parola é polindroma');
-} else {
-    console.log('La parola NON é polindroma');
-}
+const container = document.querySelector('.container');
+//creo input text
+const inputText = document.createElement('input');
+inputText.type = 'text';
+inputText.placeholder = 'inserisci il tuo testo';
+//creo bottone invio
+const button = document.createElement('button');
+button.innerHTML = '<span>Verifica</span>'
+//creo div stampa risultato-errori
+const div = document.createElement('div');
+container.append(inputText,button,div);
+
+button.addEventListener('click',function (){
+    const word = inputText.value;
+    //  Controllo se la parola é uguale a se stessa al contrario tramite funzione
+    if(word == '') {
+        div.innerHTML = 'Inserire una parola da controllare'
+    }
+    else {
+        if (isPalindroma(word)) {
+            div.innerHTML = 'La parola é polindroma';
+        } else {
+            div.innerHTML = 'La parola NON é polindroma';
+        }
+    }
+});
