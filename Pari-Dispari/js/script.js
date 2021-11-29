@@ -25,6 +25,9 @@ function oddEvenWin(numPlayer,sum) {
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+function sum(num1,num2) {
+    return num1 + num2;
+}
 //richiedo numero all'utente
 let userNum;
 do {
