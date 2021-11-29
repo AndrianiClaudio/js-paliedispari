@@ -4,25 +4,20 @@
 */
 // funzione: word --> true: parola palindrona;false: non polindroma
 function isPalindroma(word) {
-    // si scorrerá fino a metá parola. (se dispari la metá si arrotonda per difetto. la letterá a metá parola rimane a metá parola al contrario).
-    // console.log(word.length);
-    if((word.length) % 2 == 0) { //lughezza parola pari
-        indexMax = word.length / 2;
-    } else { //lughezza parola dispari
-        indexMax = Math.floor(word.length / 2);
-    }
-    let check = Boolean();
+    // si scorrerá fino a metá parola.
+    const indexMax = word.length / 2;
     let i = 0;
     do {
         // condizione parola polindroma: lettera = lettera finale
         if (word[i] == word[word.length - (i + 1)]) {
-            check = true;
+            let check = true;
         } else {
-            check = false;
+            return false; //esce dalla funzione.
         }
         i++;
-    } while (i < indexMax && check);
-    return check;
+    } while (i < indexMax);
+    //si arriva a fine ciclo solo se la parola é polindroma.
+    return true;
 }
 //  Richiedo una parola all'utente
 const word = prompt('Inserisci una parola').toLowerCase();
