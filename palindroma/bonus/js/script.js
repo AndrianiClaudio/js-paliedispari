@@ -6,6 +6,11 @@
 function isPalindroma(word) {
     const word_low = word.toLowerCase();
     const len = word.length;
+    if (len % 2 != 0) {
+        word_length = Math.floor(len / 2);
+    } else {
+        word_length = len / 2;
+    }
     let i = 0;
     do {
         // condizione parola polindroma: lettera = lettera finale
@@ -13,7 +18,7 @@ function isPalindroma(word) {
             return false; //esce dalla funzione.
         }
         i++;
-    } while (i < len/2);
+    } while (i < word_length);
     //si arriva a fine ciclo solo se la parola é polindroma.
     return true;
 }
